@@ -1,0 +1,12 @@
+{% extends 'ToDoApp/base.html' %}
+{% block content %}
+
+<p>Список категорий:</p>
+
+	{% for category in categories %}
+        {{ category.name }}
+        {{ category.pk }}
+        <p></p>
+	{% endfor %}
+
+{% endblock %}

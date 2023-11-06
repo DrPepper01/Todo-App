@@ -1,0 +1,12 @@
+{% extends 'ToDoApp/base.html' %}
+{% block content %}
+
+		<p>Категория - {{ category.name}} , Id {{ category.pk}}</p>
+		<p>Задачи принадлежащие данной категории:</p>
+		{% for task in tasks %}
+			<p> Заголовок задачи - {{task.title}} </p>
+			<p> Содержание - {{task.content}}</p>
+			<p> ID задачи - {{task.pk}} </p>
+		{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'ToDoApp/base.html' %}
+{% block content %}
+
+		<p>Зголовок - {{ tasks.title}}</p>
+		<p>Содержание - {{ tasks.content}}</p>
+		<p>Дата создания - {{ tasks.created}}</p>
+		<p>Дата выполнения - {{ tasks.expiration_date}}</p>
+		<p>Категория - {{ tasks.category}}</p>
+
+{% endblock %}
