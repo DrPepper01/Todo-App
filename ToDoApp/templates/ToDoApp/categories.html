@@ -4,9 +4,10 @@
 <p>Список категорий:</p>
 
 	{% for category in categories %}
-        {{ category.name }}
-        {{ category.pk }}
-        <p></p>
+    <ul class="list-group border border-primary">
+        <li class="list-group-item"> Название категории - {{ category.name }}</li>
+        <li class="list-group-item"> ID : {{ category.pk }}</li>
+        </ul>
 	{% endfor %}
 
 {% endblock %}

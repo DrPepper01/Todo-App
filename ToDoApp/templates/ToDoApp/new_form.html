@@ -1,0 +1,15 @@
+{% extends 'ToDoApp/base.html' %}
+
+{% block title %}Add ToDo{% endblock %}
+
+{% block content %}
+<div class="input-group mb-3">
+    <h1> {{ form_name }} </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-primary">{{ value }}</button>
+    </form>
+</div>
+{% endblock %}
+

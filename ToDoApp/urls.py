@@ -4,7 +4,7 @@ from .views import ToDoView, CategoryView, DeleteTodoView, ToDoDetailView, Updat
 
 
 urlpatterns = [
-    path('', ToDoView.as_view(), name='todo_list'),
+    path('todo/', ToDoView.as_view(), name='todo_list'),
     path('todo/<int:pk>/', ToDoDetailView.as_view(), name='todo_detail'),
     path('todo/<int:pk>/update', UpdateTodoView.as_view(), name='todo_upgrade'),
     path('todo/<int:pk>/delete', DeleteTodoView.as_view(), name='todo_delete'),

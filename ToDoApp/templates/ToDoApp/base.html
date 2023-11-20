@@ -1,54 +1,31 @@
 {% load bootstrap4 %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>{% block title %}My Site{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='slim' %}
+
 </head>
-<body class="container-fluid">
-    <header class="mb-4">
-        <h1 class="display-1 text-center">{% block header %}Навигационная панель{% endblock %}</h1>
-    </header>
-    <div class="row">
-        <ul class="col nav justify-content-end border">
-        {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'user_logout' %}">Logout</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Профиль
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'user_permissions' %}">Мои разрешения</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'change_password' %}">Изменить пароль</a>
-                </div>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'user_login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'user_register' %}">Регистрация</a>
-            </li>
-            {% endif %}
-        </ul>
-    </div>
-    <div class="row">
-        <nav class="col-md-auto nav flex-column border">
-            <a class="nav-link" href="{% url 'main_page' %}">Home</a>
-            <a class="nav-link" href="{% url 'author_list' %}">Authors</a>
-            <a class="nav-link" href="{% url 'category_list' %}">Categories</a>
-            <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
-        </nav>
-        <section class="col border py-2">
-            {% bootstrap_messages %}
-            {% block content %}
-            {% endblock %}
-        </section>
-    </div>
+<body class="container" style="width:650px; background-color:rgb(182, 222, 250)" style="font-family: Georgia, serif;">
+    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'todo_list' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'category_list' %}">Категории</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'todo_list' %}">Задачи</a></li>
+
+      </ol>
+    </nav>
+        </div>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

@@ -3,22 +3,22 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-    <h1>{{ value }}</h1>
-    <h1> {{ form_name }} </h1>
-    {% if update_text %}
-        <p>Вы хотите {{ action }} запись {{ model }} с ключем {{ object.pk }}</p>
-    {% endif %}
+<div class="input-group mb-3">
+
+
     <form method="post">
+        <h1>{{ value }}</h1>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+
+        {% if messages %}
+            {% for message in messages %}
+                    {{ message }}
+            {% endfor %}
+        {% endif %}
+        <p></p>
+        <button type="submit" class="btn btn-outline-primary">{{ btn_value }}</button>
     </form>
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+
 {% endblock %}
 

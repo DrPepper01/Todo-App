@@ -1,12 +1,17 @@
 {% extends 'ToDoApp/base.html' %}
 {% block content %}
-
-		<p>Категория - {{ category.name}} , Id {{ category.pk}}</p>
-		<p>Задачи принадлежащие данной категории:</p>
+{% load static %}
+	<ul class="list-group border border-primary">
+		<li class="list-group-item">Категория - {{ category.name}} , ID {{ category.pk}}</li>
+		<li class="list-group-item">Задачи принадлежащие данной категории:
 		{% for task in tasks %}
-			<p> Заголовок задачи - {{task.title}} </p>
-			<p> Содержание - {{task.content}}</p>
-			<p> ID задачи - {{task.pk}} </p>
-		{% endfor %}
+			<li class="list-group-item"> Заголовок задачи - {{task.title}} </li>
+			<li class="list-group-item"> Содержание - {{task.content}}</li>
+			<li class="list-group-item"> ID задачи - {{task.pk}} </li>
+
+		<hr class="hr">
+			{% endfor %}
+		</li>
+	</ul>
 
 {% endblock %}

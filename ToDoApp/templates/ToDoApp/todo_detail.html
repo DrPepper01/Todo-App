@@ -1,10 +1,15 @@
 {% extends 'ToDoApp/base.html' %}
 {% block content %}
 
-		<p>Зголовок - {{ tasks.title}}</p>
-		<p>Содержание - {{ tasks.content}}</p>
-		<p>Дата создания - {{ tasks.created}}</p>
-		<p>Дата выполнения - {{ tasks.expiration_date}}</p>
-		<p>Категория - {{ tasks.category}}</p>
+	<ul class="list-group border border-primary">
+		<li class="list-group-item">Заголовок - {{ tasks.title}}</li>
+		<li class="list-group-item">Содержание - {{ tasks.content}}</li>
+		<li class="list-group-item"><i class="fa-solid fa-calendar-days"></i>Дата создания - {{ tasks.created}}</li>
+
+		<li class="list-group-item">Дэдлайн - {{ tasks.expiration_date}}</li>
+		<li class="list-group-item">Категория - {{ tasks.category}}</li>
+		<li class="list-group-item">PK -  {{ tasks.pk}}</li>
+	 </ul>
+
 
 {% endblock %}
